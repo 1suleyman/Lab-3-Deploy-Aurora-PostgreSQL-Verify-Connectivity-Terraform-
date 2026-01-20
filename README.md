@@ -235,6 +235,17 @@ Attempted `psql` connection with incorrect credentials → ❌
 * Master username is `postgres`
 * Incorrect username/password initially used
 
+```bash
+psql \
+  "host=lab-aurora-mig-aurora-cluster.cluster-clyw8ogk0wl8.eu-west-2.rds.amazonaws.com \
+   port=5432 \
+   dbname=appdb \
+   user=admin \
+   password=<REAL_PASSWORD> \
+   sslmode=require" \
+  -c "select 1;"
+```
+
 After correcting credentials:
 
 ✅ Successful PostgreSQL connection
